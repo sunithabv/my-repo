@@ -1,0 +1,1 @@
+kubectl create secret generic ssl --from-file=ca.pem=elasticsearch.ca.pem --from-file=crt.pem=elasticsearch.crt.pem --from-file=key.pem=elasticsearch.key.pem

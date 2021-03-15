@@ -1,0 +1,1000 @@
+  132  clear
+  133  ls
+  134  vi values.yaml 
+  135  cp values.yaml values.yaml.bak
+  136  vi values.yaml 
+  137  helm repo list
+  138  vi values.yaml 
+  139  cd ..
+  140  rm -rf activemq/
+  141  clear
+  142  exit
+  143  helm1 delete tactivemq
+  144  helm1 delete activemq
+  145  clear
+  146  kc1 get pv,pvc | grep activ
+  147  clear
+  148  vi roles/packages/helm-cli/tasks/main.yml 
+  149  helm repo list
+  150  an --tags helm-cli playbooks/console.yml
+  151  clear
+  152  helm repo list
+  153  helm install --name activemq_test activemq-artemis/activemq-artemis
+  154  helm1 install --name activemq_test activemq-artemis/activemq-artemis
+  155  helm1 install activemq-artemis/activemq-artemis
+  156  helm1 install activemq-artemis/activemq-artemis --name activemq
+  157  helm1 install activemq-artemis/activemq-artemis -name activemq
+  158  helm1 install activemq-artemis/activemq-artemis -generate-name activemq
+  159  helm1 install activemq-artemis/activemq-artemis --generate-name activemq
+  160  helm1 install activemq-artemis/activemq-artemis  activemq
+  161  helm1 install activemq-artemis/activemq-artemis activemq
+  162  helm1 install activemq-artemis/activemq-artemis --generate-name
+  163  helm repo update
+  164  mkdir activemq
+  165  cd activemq
+  166  git clone https://github.com/vromero/activemq-artemis-helm.git
+  167  ls
+  168  cd activemq-artemis-helm/stable/activemq-artemis/
+  169  ls
+  170  cd ..
+  171  ls
+  172  cp activemq-artemis/ /home/mosipuser/mosip-infra/deployment/sandbox-v2/helm/charts/activemq/
+  173  cp activemq-artemis/ /home/mosipuser/mosip-infra/deployment/sandbox-v2/helm/charts/activemq
+  174  ls
+  175  cp -R activemq-artemis/ /home/mosipuser/mosip-infra/deployment/sandbox-v2/helm/charts/activemq
+  176  clear
+  177  cd activemq-artemis/
+  178  ls
+  179  cd..
+  180  sb
+  181  cd activemq.bak/
+  182  ls
+  183  clear
+  184  ls
+  185  sb
+  186  an playbooks/activemq.yml 
+  187  clear
+  188  vi activemq.bak/values.template.j2 
+  189  mv activemq.bak/ helm/charts/activemq
+  190  ls
+  191  mv activemq/ activemq.new
+  192  an playbooks/activemq.yml 
+  193  clear
+  194  kc1 get pods | grep activemq
+  195  kc1 exec -it activemq-64f469f85f-86q7m --sh
+  196  kc1 exec -it activemq-64f469f85f-86q7m -- sh
+  197  kc1 exec -it activemq-64f469f85f-86q7m /bin/bash
+  198  clear
+  199  helm1 delete activemq
+  200  vi podconfig.yml 
+  201  an playbooks/activemq.yml 
+  202  exit
+  203  tmux a -t keshav
+  204  tmux new -s keshav
+  205  sb
+  206  ls
+  207  ls
+  208  tmux a -t S
+  209  tmux
+  210  sb
+  211  ls
+  212  cd helm/charts/activemq/
+  213  vi values.yaml 
+  214  ls
+  215  cd ..
+  216  mv activemq/ /home/mosipuser/mosip-infra/deployment/sandbox-v2/activemq.bak
+  217  ls
+  218  sb
+  219  ls
+  220  helm1 delete activemq
+  221  tmux
+  222  sb
+  223  sb
+  224  tmux a -t S
+  225  an playbooks/kibana.yml 
+  226  sb
+  227  ls
+  228  cd ~/
+  229  ls
+  230  cd bin/
+  231  ls
+  232  cd helm 
+  233  cat helm 
+  234  :qls
+  235  ls
+  236  cd 
+  237  sb
+  238  grep -R "elasticsearch" *
+  239  sb
+  240  tmux a -t S
+  241  tmux new -s S
+  242  sb
+  243  grep -R "elasticsearch" *
+  244  sb
+  245  grep -R "ELASTICSEARCH_HOSTS" *
+  246  cd helm/charts/elasticsearch/
+  247  ls
+  248  vi values.template.j2
+  249  kcm get pods | grep elas
+  250  kcm exec -it elasticsearch-master-0 /bin/bash
+  251  kc1 exec -it elasticsearch-master-0 -n monitoring 
+  252  kc1 exec -it elasticsearch-master-0 -n monitoring bin/bash
+  253  kc1 exec -it elasticsearch-master-0 -n monitoring sh
+  254  sb
+  255  cd helm/charts/elasticsearch/
+  256  ls
+  257  vi values.yaml
+  258  sb
+  259  exit
+  260  kc1 get pods | grep ngin
+  261  kc1 get pods | grep ingress
+  262  exit
+  263  ls
+  264  vi playbooks/mzmonitoring.yml 
+  265  kcm get pods | grep metric
+  266  cd helm/charts/
+  267  ls
+  268  cd elasticsearch/
+  269  ls
+  270  cd templates/
+  271  ls
+  272  vi ingress.yaml
+  273  exit
+  274  vi site.yml 
+  275  vi playbooks/mzmonitoring.yml 
+  276  kcm get pods | grep prom
+  277  kcm get pods | grep graf
+  278  kcm describe pod graf-grafana-9cd9b9568-lq84w
+  279  kc1 get volume
+  280  kcm get volume
+  281  vi playbooks/mzmonitoring.yml 
+  282  exit
+  283  kcm get pods 
+  284  kcm describe pod elasticsearch-master-0
+  285  kc1 get volume
+  286  kcm get volume
+  287  kcm get pv
+  288  kcm get pvc
+  289  vi  playbooks/nfs.yml 
+  290  kcm get pods
+  291  kcm logs elasticsearch-master-0
+  292  exit
+  293  kcm get pods 
+  294  kcm get secrets
+  295  kcm get pods
+  296  kcm get pods | grep kib
+  297  kcm logs kib-kibana-756fc68879-l7rmc
+  298  kcm describe pod kib-kibana-756fc68879-l7rmc
+  299  exit
+  300  kcm get pods
+  301  kcm get pods | grep kib
+  302  kcm describe pod kib-kibana-756fc68879-q8r47
+  303  exit
+  304  cd helm/charts/kibana/
+  305  ls
+  306  cd templates/
+  307  ls
+  308  vi secret.yaml
+  309  ls
+  310  cd ..
+  311  ls
+  312  vi values.yaml
+  313  cd templates/
+  314  ls
+  315  vi secret.yaml 
+  316  vi deployment.yaml 
+  317  sb
+  318  helmm delete kib
+  319  kcm get deploy
+  320  exit
+  321  kcm get pods | grep kib
+  322  kcm describe pod kib-kibana-756fc68879-cgnld
+  323  cd helm/charts/kibana/
+  324  ls
+  325  cd templates/
+  326  vi deployment.yaml 
+  327  cd ..
+  328  vi values.yaml 
+  329  exit
+  330  kcm get pods | grep kib
+  331  kcm describe pod kib-kibana-5798bb44f7-5hzq5
+  332  kcm logs 
+  333  kcm get pods | grep kib
+  334  kcm logs kib-kibana-5798bb44f7-5hzq5
+  335  kcm get pods | grep kib
+  336  kcm get pods | grep elast
+  337  kcm exec -it elasticsearch-master-0 sh
+  338  cd helm/charts/elasticsearch/
+  339  ls
+  340  vi values.template.j2
+  341  sb
+  342  helmm delete elasticsearch
+  343  helmm delete kib
+  344  kcm get pods | grep elast
+  345  kcm get pods | grep kib
+  346  exit
+  347  kcm get pod | grep elast
+  348  kcm describe pod elasticsearch-master-0
+  349  kcm get pod | grep elast
+  350  kcm get pod | grep kib
+  351  kcm logs kib-kibana-5798bb44f7-6xkxm
+  352  kcm describe pod kib-kibana-5798bb44f7-6xkxm
+  353  kcm get pod | grep kib
+  354  kcm logs kib-kibana-5798bb44f7-6xkxm
+  355  kcm get pod | grep kib
+  356  exit
+  357  kcm get pods | grep elast
+  358  kcm logs elasticsearch-master-0
+  359  kcm get pods | grep elast
+  360  kcm describe pod elasticsearch-master-0
+  361  kcm get pods | grep elast
+  362  kcm exec -it elasticsearch-master-0 sh
+  363  exit
+  364  kcm get pods | grep elas
+  365  kcm exec -it elasticsearch-master-0 sh
+  366  cat elasticsearch.yml
+  367  kcm exec -it elasticsearch-master-0 sh
+  368  kcm get pods | grep elas
+  369  kcm logs elasticsearch-master-0
+  370  exit
+  371  kc1 get pods | grep elast
+  372  kc1 get pods | grep ela
+  373  kcm get pods | grep ela
+  374  kcm logs elasticsearch-master-0
+  375  kcm get pods | grep elast
+  376  kcm exec -it elasticsearch-master-0 sh
+  377  exit
+  378  kcm get pods | grep elast
+  379  kcm logs elasticsearch-master-0
+  380  kcm get pods | grep elast
+  381  kcm describe pod elasticsearch-master-0
+  382  kcm 
+  383  kcm get pods | grep elas
+  384  kcm exec -it elasticsearch-master-0 sh
+  385  ls
+  386  cd tmp
+  387  ls
+  388  pwd
+  389  sb
+  390  kcm get pods | grep elast
+  391  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/
+  392  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elastic-stack-ca.p12
+  393  cd tmp/
+  394  ls
+  395  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /sandbox-v2/tmp/elastic-stack-ca.p12
+  396  sb
+  397  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /sandbox-v2/tmp/elastic-stack-ca.p12
+  398  sudo kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /sandbox-v2/tmp/elastic-stack-ca.p12
+  399  sudo kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp/elastic-stack-ca.p12
+  400  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp/elastic-stack-ca.p12
+  401  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  402  kcm cp elasticsearch-master-0:usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  403  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 .tmp/elastic-stack-ca.p12
+  404  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 ./tmp/elastic-stack-ca.p12
+  405  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 elastic-stack-ca.p12
+  406  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp/elastic-stack-ca.p12
+  407  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 
+  408  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp
+  409  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp/xyz
+  410  kcm cp -C elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 elastic-stack-ca.p12
+  411  kcm cp -C elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  412  kcm cp C elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  413  kcm cp -R elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  414  kcm cp -p elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  415  cd tmp/
+  416  ls
+  417  sb
+  418  kcm get pods | grep elas
+  419  kcm exec -it elasticsearch-master-0 sh
+  420  kcm cp -p elasticsearch-master-0:/usr/share/elasticsearch/elastic-certificates.p12 /tmp/elastic-stack-ca.p12
+  421  cd tmp/
+  422  ls
+  423  kcm cp -p elasticsearch-master-0:/usr/share/elasticsearch/elastic-certificates.p12 /tmp/elastic-stack-ca.p12s
+  424  sb
+  425  kcm cp -R elasticsearch-master-0:/usr/share/elasticsearch/elastic-certificates.p12 /tmp/elastic-stack-ca.p12s
+  426  ls tmp/
+  427  kcm cp -C elasticsearch-master-0:/usr/share/elasticsearch/elastic-certificates.p12 /tmp/elastic-stack-ca.p12s
+  428  ls tmp/
+  429  cd tmp/
+  430  ls
+  431  rm elastic-stack-ca.p12
+  432  ls
+  433  sb
+  434  kcm cp -p elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 /tmp/elastic-stack-ca.p12
+  435  ls tmp/
+  436  kcm cp -C elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 tmp/elastic-stack-ca.p12
+  437  ls tmp/
+  438  cd tmp/
+  439  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-stack-ca.p12 elastic-stack-ca.p12
+  440  ls
+  441  sb
+  442  kcm get pods | grep elast
+  443  kcm exec -it elasticsearch-master-0 sh
+  444  cd tmp/
+  445  kcm cp elasticsearch-master-0:/usr/share/elasticsearch/elastic-certificates.p12 elastic-certificates.p12
+  446  ls
+  447  sb
+  448  ls
+  449  cd tmp/
+  450  ls
+  451  cat elastic-certificates.p12
+  452  q!
+  453  sb
+  454  cd helm/charts/grafana/
+  455  ls
+  456  cd templates/
+  457  ls
+  458  cat secret.yaml
+  459  cd ..
+  460  ls
+  461  cd ..
+  462  ls
+  463  cd kibana/
+  464  ls
+  465  sb
+  466  grep -R "elasticsearch" *
+  467  grep -R "ssl" *
+  468  cd helm/charts/
+  469  ls
+  470  cd 
+  471  sb
+  472  cd playbooks/
+  473  ls
+  474  sb
+  475  cd playbooks/
+  476  ls
+  477  sb
+  478  vi elasticsearch.yml
+  479  cd playbooks/
+  480  vi elasticsearch.yml 
+  481  tmux new -t S
+  482  sb
+  483  cd tmp
+  484  ls
+  485  cat grafana_mz.token
+  486  sb
+  487  cd helm/charts/
+  488  ls
+  489  cd kibana/
+  490  ls
+  491  cd templates/
+  492  ls
+  493  cat ingress.yaml 
+  494  cd
+  495  sudo su mosipuser
+  496  sb
+  497  tmux a -t S
+  498  kcm get pods | grep elasti
+  499  kcm get pods
+  500  vi playbooks/grafana.yml 
+  501  exit
+  502  kcm get pods 
+  503  kcm get pods | grep elast
+  504  vi helm/charts/elasticsearch/
+  505  cd helm/charts/elasticsearch/
+  506  ls
+  507  vi values.template.j2
+  508  sb
+  509  kcm get pods | grep elast
+  510  kcm describe pod elasticsearch-master-0
+  511  kcm create secret generic sslsecret --from-file=ssl-cert=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.crt.pem --from-file=ssl-key=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.key.pem
+  512  kcm get pods | grep elast
+  513  kcm describe pod elasticsearch-master-0
+  514  kcm logs elasticsearch-master-0
+  515  kcm exec -it elasticsearch-master-0elasticsearch-master-0 sh
+  516  kcm get pods 
+  517  sb
+  518  exit
+  519  sb
+  520  ls
+  521  ls
+  522  sb
+  523  tmux a -t S
+  524  kc1 get pods ker
+  525  kc1 get pods | grep ker
+  526  vi playbooks/elasticsearch.yml 
+  527  vi group_vars/all.yml 
+  528  vi site.yml 
+  529  an reset.yml 
+  530  ls
+  531  an playbooks/mzcluster.yml 
+  532  an playbooks/mzmonitoring.yml 
+  533  an reset.yml 
+  534  vi site.yml 
+  535  an site.yml 
+  536  an playbooks/coredns.yml 
+  537  an site.yml 
+  538  an playbooks/nginx.yml 
+  539  kc1 get pods
+  540  an playbooks/console.yml 
+  541  an playbooks/mzcluster.yml 
+  542  an playbooks/nfs.yml 
+  543  an playbooks/dmzcluster.yml 
+  544  an playbooks/mzmonitoring.yml 
+  545  an playbooks/nfs.yml 
+  546  an playbooks/mzmonitoring.yml 
+  547  helm1 delete grafana
+  548  helmm delete grafana
+  549  cd helm/charts/
+  550  ls
+  551  sb
+  552  helm1 delete grafana -n monitoring
+  553  helmm delete grafana -n monitoring
+  554  an playbooks/reset/reset-monitoring.yml
+  555  an playbooks/mzmonitoring.yml 
+  556  vi playbooks/mzmonitoring.yml 
+  557  helmm delete grafana
+  558  helm1 list
+  559  helm1 list ns monitoring
+  560  helm1 list -n monitoring
+  561  kcm get pods | grep graf
+  562  kcm get deploy
+  563  kcm delete deployment graf-grafana
+  564  kcm get pods
+  565  an playbooks/mzmonitoring.yml 
+  566  kcm get pods
+  567  kcm get deploy
+  568  helm ls
+  569  helm ls -n monitoring
+  570  helm1 ls -n monitoring
+  571  vi playbooks/mzmonitoring.yml 
+  572  ls
+  573  cd helm/charts/elasticsearch/
+  574  ls
+  575  cd templates/
+  576  ls
+  577  vi statefulset.yaml 
+  578  cd ..
+  579  ls
+  580  vi values.template.j2 
+  581  cd ..
+  582  ls
+  583  cd kibana/templates/
+  584  ls
+  585  cd ..
+  586  ls
+  587  vi values.template.j2 
+  588  sb
+  589  an playbooks/mzmonitoring.yml 
+  590  an playbooks/nfs.yml 
+  591  an playbooks/mz-nfs-provisioner.yml
+  592  an playbooks/mzmonitoring.yml 
+  593  kc1 get pv
+  594  kc1 get pvc
+  595  kcm get pvc
+  596  helmm delete elasticsearch
+  597  kcm get pods
+  598  an playbooks/mzmonitoring.yml 
+  599  cd helm/charts/kibana/
+  600  ls
+  601  vi values.yaml 
+  602  sb
+  603  an playbooks/kibana.yml 
+  604  vi playbooks/kibana.yml 
+  605  an playbooks/kibana.yml 
+  606  an playbooks/grafana.yml 
+  607  vi playbooks/grafana.yml 
+  608  vi playbooks/prometheus.yml 
+  609  an playbooks/kibana.yml 
+  610  vi playbooks/kibana.yml 
+  611  vi playbooks/prometheus.yml 
+  612  vi playbooks/kibana.yml 
+  613  an playbooks/kibana.yml 
+  614  cd helm/charts/kibana/
+  615  ls
+  616  vi values.template.j2 
+  617  sb
+  618  an playbooks/kibana.yml 
+  619  cd helm/charts/kibana/
+  620  ls
+  621  cd templates/
+  622  ls
+  623  cat secret.yaml
+  624  ls
+  625  vi configmap.yaml 
+  626  vi deployment.yaml 
+  627  kcm get pods | grep kib
+  628  kc1 describe pod kib-kibana-756fc68879-l7rmc
+  629  kcm describe pod kib-kibana-756fc68879-l7rmc
+  630  sb
+  631  kcm get secrets
+  632  cd helm/charts/kibana/
+  633  ls
+  634  cd templates/
+  635  ls
+  636  cat secret.yaml
+  637  ls
+  638  vi deployment.yaml 
+  639  vi secret.yaml 
+  640  vi deployment.yaml 
+  641  sb
+  642  kcm get deplo
+  643  helmm delete kibana
+  644  kcm get deployments
+  645  kcm delete deploy kib-kibana
+  646  kcm get deployments
+  647  kcm get svc
+  648  kcm delete svc kib-kibana
+  649  ls
+  650  kcm get svc
+  651  kcm get pods
+  652  an playbooks/kibana.yml 
+  653  helmm list
+  654  helmm list -a
+  655  helmm delete kib
+  656  helmm delete graf
+  657  ls
+  658  sb
+  659  an playbooks/kibana.yml 
+  660  helmm delete kib
+  661  ls
+  662  kcm gte pods | grep kib
+  663  kcm get pods | grep kib
+  664  an playbooks/kibana.yml 
+  665  an playbooks/mzmonitoring.yml 
+  666  kcm get pods | grep elas
+  667  kcm exec -it elasticsearch-master-0 sh
+  668  cd helm/charts/elasticsearch/
+  669  ls
+  670  vi values.yaml 
+  671  vi values.template.j2 
+  672  sb
+  673  helmm delete elasticsearch
+  674  helmm delete kib
+  675  an playbooks/mzmonitoring.yml 
+  676  cd helm/charts/elasticsearch/
+  677  ls
+  678  cd templates/
+  679  ls
+  680  vi configmap.yaml
+  681  ls
+  682  cd ..
+  683  ls
+  684  vi values.yaml
+  685  vi values.template.j2
+  686  helmm delete elasticsearch
+  687  sb
+  688  helmm delete elasticsearch
+  689  kcm get pods | grep elas
+  690  an playbooks/mzmonitoring.yml 
+  691  cd helm/charts/elasticsearch/
+  692  vi values.yaml 
+  693  sb
+  694  cd helm/charts/elasticsearch/
+  695  ls
+  696  vi values.template.j2 
+  697  sb
+  698  an playbooks/mzmonitoring.yml 
+  699  %
+  700  cd helm/charts/elasticsearch/
+  701  ls
+  702  vi values.template.j2
+  703  helmm delete elasticsearch
+  704  helmm delete kib
+  705  sb
+  706  an playbooks/mzmonitoring.yml 
+  707  helmm delete elasticsearch
+  708  helmm delete kib
+  709  cd helm/charts/elasticsearch/
+  710  vi values.yaml 
+  711  vi values.template.j2 
+  712  sb
+  713  an playbooks/mzmonitoring.yml 
+  714  cd helm/charts/elasticsearch/
+  715  ls
+  716  vi values.yaml 
+  717  vi values.template.j2 
+  718  sb
+  719  helmm delete elastic
+  720  helmm delete elasticsearch
+  721  an playbooks/elasticsearch.yml 
+  722  cd helm/charts/elasticsearch/
+  723  vi values.yaml 
+  724  sb
+  725  vi playbooks/elasticsearch.yml 
+  726  cd helm/charts/elasticsearch/
+  727  ls
+  728  vi values.template.j2
+  729  vi values.yaml 
+  730  sb
+  731  an playbooks/mzmonitoring.yml 
+  732  ls
+  733  sb
+  734  cd tmp
+  735  ls
+  736  cat dashboard_view_mz.token
+  737  cat dashboard_view_dmz.token
+  738  ls
+  739  openssl pkcs12 -in path.p12 -out elasticsearch.key.pem -nocerts -nodes
+  740  openssl pkcs12 -in elastic-certificates.p12 -out elasticsearch.key.pem -nocerts -nodes
+  741  ls
+  742  openssl pkcs12 -in elastic-certificates.p12 -out newfile.crt.pem -clcerts -nokeys
+  743  ls
+  744  openssl pkcs12 -in elastic-certificates.p12 -out elasticsearch.crt.pem -clcerts -nokeys
+  745  ls
+  746  ll
+  747  rm newfile.crt.pem
+  748  ll
+  749  vi elasticsearch.crt.pem
+  750  vi elasticsearch.key.pem
+  751  sb
+  752  cd helm/charts/elasticsearch/
+  753  ls
+  754  cd templates/
+  755  ls
+  756  cd ..
+  757  ls
+  758  cd ..
+  759  ls
+  760  cd kibana/templates/
+  761  ls
+  762  cp secret.yaml ../../elasticsearch/templates/
+  763  cd ../../elasticsearch/templates/
+  764  ls
+  765  vi secret.yaml
+  766  cd ..
+  767  vi values.yaml 
+  768  vi values.template.j2 
+  769  sb
+  770  vi helm/charts/elasticsearch/values.yaml 
+  771  sb
+  772  vi helm/charts/elasticsearch/values.template.j2 
+  773  helmm delete elasticsearch
+  774  helmm delete kib
+  775  an playbooks/mzmonitoring.yml 
+  776  /home/mosipuser/mosip-infra/deployment/sandbox-v2/helm/charts/elasticsearch\n\nError/home/mosipuser/mosip-infra/deployment/sandbox-v2/helm/charts/elasticsearch\n\nError
+  777  cd helm/charts/elasticsearch/
+  778  cd templates/
+  779  ls
+  780  rm secret.yaml
+  781  ls
+  782  sb
+  783  helmm delete elasticsearch
+  784  an playbooks/mzmonitoring.yml 
+  785  kcm get svc
+  786  kcm delete svc elasticsearch-master elasticsearch-master-headless
+  787  kcm get deploy
+  788  ls
+  789  kc1 create secret tls my-tls-secret   --cert=tmp \
+  790  cd tmp/
+  791  ls
+  792  sb
+  793  kc1 create secret tls my-tls-secret   --cert=tmp   --key=tmp
+  794  cd tmp/
+  795  pwd
+  796  sb
+  797  kc1 create secret tls my-tls-secret   --cert=tmp \
+  798  cd tmp/
+  799  pwd
+  800  sb
+  801  kc1 create secret tls my-tls-secret --cert=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.crt.pem --key=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.key.pem
+  802  cd tmp/
+  803  ls
+  804  sb
+  805  kc1 get secret 
+  806  kc1 get secret my-tls-secret
+  807  kc1 create secret generic sslsecret --from-file=ssl-cert=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.crt.pem --from-file=ssl-key=/home/mosipuser/mosip-infra/deployment/sandbox-v2/tmp/elasticsearch.key.pem
+  808  kc1 get secret
+  809  kc1 get secret sslsecret
+  810  cd helm/charts/elasticsearch/
+  811  ls
+  812  vi values.yaml 
+  813  vi values.template.j2 
+  814  helmm delete elasticsearch
+  815  sb
+  816  cd helm/charts/elasticsearch/
+  817  ls
+  818  vi values.yaml 
+  819  cd templates/
+  820  ls
+  821  vi statefulset.yaml 
+  822  sb
+  823  helmm delete elasticsearch
+  824  an playbooks/mzmonitoring.yml 
+  825  helmm delete elasticsearch
+  826  cd helm/charts/
+  827  ls
+  828  cd elasticsearch/
+  829  ls
+  830  helm install . elasticsearch
+  831  helm install elasticsearch .
+  832  kc1 get pods
+  833  helmm install elasticsearch .
+  834  helmm ls
+  835  kcm get pods | grep elast
+  836  kcm logs elasticsearch-master-0 --watch
+  837  watch kcm logs elasticsearch-master-0 
+  838  kcm logs elasticsearch-master-0 
+  839  kcm logs elasticsearch-master-0
+  840  vi values.yaml 
+  841  sb
+  842  git status
+  843  q!
+  844  cd tmp
+  845  ls
+  846  sb
+  847  cd helm/charts/
+  848  ls
+  849  cd elasticsearch/
+  850  ls
+  851  cat values.template.j2
+  852  exit
+  853  sb
+  854  tmux a -t S
+  855  sb
+  856  tmux a -t S
+  857  ls
+  858  sb
+  859  cd helm/charts/
+  860  ls
+  861  cd elasticsearch/
+  862  ls
+  863  cd Chart.yaml
+  864  ls
+  865  cat Chart.yaml
+  866  ls
+  867  cat Makefile
+  868  ls
+  869  cat README.md
+  870  ls
+  871  cat README_ORIGINAL.md
+  872  ls
+  873  cat values.template.j2
+  874  ls
+  875  cat values.yaml
+  876  ls
+  877  cd templates/
+  878  ls
+  879  ls
+  880  cat configmap.yaml
+  881  ls
+  882  cat ingress.yaml 
+  883  ls
+  884  cat poddisruptionbudget.yaml
+  885  ls
+  886  cat rolebinding.yaml
+  887  ls
+  888  cat serviceaccount.yaml
+  889  ls
+  890  cat statefulset.yaml
+  891  cat statefulset.yaml
+  892  ls
+  893  cat statefulset.yaml
+  894  cat statefulset.yamlls
+  895  ls
+  896  cat _helpers.tpl
+  897  ls
+  898  cat NOTES.txt 
+  899  cat NOTES.txt ls
+  900  ls
+  901  cat podsecuritypolicy.yaml
+  902  ls
+  903  cat role.yaml
+  904  ls
+  905  cat service.yaml
+  906  cat service.yamlls
+  907  ls
+  908  ls
+  909  cd test/
+  910  ls
+  911  pwd
+  912  sb
+  913  cd helm/charts/
+  914  ls
+  915  cd kibana/
+  916  ls
+  917  ll
+  918  ls
+  919  ls
+  920  ls
+  921  cat Chart.yaml
+  922  ls
+  923  cat Makefile
+  924  ls
+  925  cat README.md
+  926  ls
+  927  cat README_ORIGINAL.md
+  928  ls
+  929  cat values.template.j2
+  930  cat values.template.j2ls
+  931  ls
+  932  cat values.yaml
+  933  ls
+  934  cat vv
+  935  ls
+  936  cat vv
+  937  ls
+  938  cat templates
+  939  lls
+  940  ls
+  941  cat templates/
+  942  ls
+  943  cd templates/
+  944  ls
+  945  ls
+  946  cat configmap.yaml
+  947  ls
+  948  cat deployment.yaml
+  949  cat deployment.yamlls
+  950  ls
+  951  cat _helpers.tpl
+  952  ls
+  953  cat ingress.yaml
+  954  cat ingress.yamlls
+  955  ls
+  956  cat secret-env.yaml
+  957  ls
+  958  cat secret.yaml
+  959  cat secret.yamlls
+  960  ls
+  961  cat service.yaml
+  962  ls
+  963  pwd
+  964  cd ../
+  965  ls
+  966  cd ../
+  967  ls
+  968  ls
+  969  cd elasticsearch/
+  970  ls
+  971  cat Chart.yaml
+  972  ls
+  973  cd templates/
+  974  ls
+  975  cat _helpers.tpl
+  976  ls
+  977  cat NOTES.txt
+  978  ls
+  979  ll
+  980  cat test/
+  981  ls
+  982  ls
+  983  cd test/
+  984  ls
+  985  ll
+  986  cd ..
+  987  ll
+  988  sb
+  989  ls
+  990  sb
+  991  cd playbooks/mzmonitoring.yml 
+  992  vi playbooks/
+  993  cd playbooks/
+  994  ls
+  995  cat mzmonitoring.yml 
+  996  cat kibana.yml 
+  997  cat grafana.yml 
+  998  cat grafana.yml 
+  999  exit
+ 1000  cd helm/charts/elasticsearch/
+ 1001  rm -rf *
+ 1002  ls
+ 1003  sb
+ 1004  cp -R elastic/* helm/charts/elasticsearch/
+ 1005  cd helm/charts/elasticsearch/
+ 1006  ls
+ 1007  cat kubectl.txt
+ 1008  vi kubectl.txt
+ 1009  kcm create secret generic ssl --from-file=ca.pem=elasticsearch.ca.pem --from-file=crt.pem=elasticsearch.crt.pem --from-file=key.pem=elasticsearch.key.pem
+ 1010  kcm get secret
+ 1011  kcm get secret ssl
+ 1012  kcm describe secret ssl
+ 1013  ls ca.pem
+ 1014  ls
+ 1015  cat ca.pem
+ 1016  elasticsearch ca.pem
+ 1017  cat elasticsearch.ca.pem
+ 1018  sb
+ 1019  helmm delete elasticsearch
+ 1020  helmm delete kibana
+ 1021  an playbooks/mzmonitoring.yml 
+ 1022  helmm delete kib
+ 1023  kcm get pods | grep fil
+ 1024  helmm delete filebeat
+ 1025  kcm get pods | grep file
+ 1026  kcm get pods 
+ 1027  cd helm/charts/filebeat/
+ 1028  ls
+ 1029  sb
+ 1030  vi playbooks/mzmonitoring.yml 
+ 1031  sb
+ 1032  cd helm/charts/filebeat/
+ 1033  ls
+ 1034  vi values.yaml 
+ 1035  vi values.yaml
+ 1036  cd ../..
+ 1037  ls
+ 1038  cd charts/elasticsearch/
+ 1039  vi values.yaml 
+ 1040  cd ../filebeat/
+ 1041  vi values.yaml 
+ 1042  sb
+ 1043  vi playbooks/mzmonitoring.yml 
+ 1044  sb 
+ 1045  an playbooks/mzmonitoring.yml 
+ 1046  helmm delete filebeat
+ 1047  an playbooks/filebeat.yml 
+ 1048  vi playbooks/filebeat.yml 
+ 1049  an playbooks/filebeat.yml 
+ 1050  an playbooks/mzmonitoring.yml 
+ 1051  kcm get pods 
+ 1052  helmm delete filebeat
+ 1053  ls
+ 1054  cd helm/charts/filebeat/
+ 1055  ls
+ 1056  vi values.yaml 
+ 1057  vi values.template.j2 
+ 1058  sb
+ 1059  helmm delete filebeat
+ 1060  an playbooks/mzmonitoring.yml 
+ 1061  sb
+ 1062  vi playbooks/kibana.yml 
+ 1063  vi playbooks/filebeat.yml 
+ 1064  cd helm/charts/filebeat/
+ 1065  vi values.template.j2 
+ 1066  sb
+ 1067  vi playbooks/mzmonitoring.yml 
+ 1068  vi group_vars/all.yml 
+ 1069  get deploy kibana
+ 1070  kcm get deploy
+ 1071  vi group_vars/all.yml 
+ 1072  helmm delete filebeat
+ 1073  an playbooks/mzmonitoring.yml 
+ 1074  kcm get pods | grep file
+ 1075  kcm logs filebeat-filebeat-8c5pq
+ 1076  \
+ 1077  vi playbooks/mzmonitoring.yml 
+ 1078  an playbooks/reset/reset-monitoring.yml 
+ 1079  kcm get pods
+ 1080  
+ 1081  helmm delete prometheus
+ 1082  helmm delete prom-prometheus
+ 1083  helmm delete prom
+ 1084  helmm delete elasticsearch
+ 1085  helmm delete kibana
+ 1086  helmm delete kib
+ 1087  helmm delete metric-server
+ 1088  helmm delete metric
+ 1089  helmm ls
+ 1090  helmm delete metrics-server
+ 1091  helmm delete filebeat
+ 1092  kcm get pods
+ 1093  helmm delete filebeat
+ 1094  kcm get pods
+ 1095  an sb
+ 1096  sb
+ 1097  an playbooks/mzmonitoring.yml 
+ 1098  kcm get pvc
+ 1099  kcm get pv
+ 1100  kcm get pvc
+ 1101  an playbooks/mz-nfs-provisioner.yml
+ 1102  an playbooks/nfs.yml 
+ 1103  kcm get pvc
+ 1104  an playbooks/reset/reset-monitoring.yml
+ 1105  helmm delete kibana
+ 1106  helmm delete kib
+ 1107  helmm delete elasticsearch
+ 1108  helmm delete metrics-server\
+ 1109  helmm delete metrics-server
+ 1110  helmm delete prom
+ 1111  helmm delete filebeat
+ 1112  kcm get pvc
+ 1113  helmm delete grf
+ 1114  helmm delete graf
+ 1115  kcm get pvc
+ 1116  an playbooks/nfs.yml 
+ 1117  an playbooks/mz-nfs-provisioner.yml
+ 1118  an playbooks/mzmonitoring.yml 
+ 1119  cd tmp/
+ 1120  ls
+ 1121  cat grafana_mz.token
+ 1122  ls
+ 1123  sb
+ 1124  cd helm/charts/elasticsearch/
+ 1125  ls
+ 1126  cat kubectl.txt
+ 1127  sb
+ 1128  cd tmp
+ 1129  ls
+ 1130  sb
+ 1131  history > history 

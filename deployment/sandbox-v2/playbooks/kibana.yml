@@ -1,0 +1,28 @@
+# Playbook to install ELK component Kibana
+- hosts: console
+  vars:
+    kube_config: '{{clusters.mz.kube_config}}'
+    install_name: 'kib'
+    helm_chart: '{{charts_root}}/kibana'
+    #helm_chart: 'kibana/kibana'
+    is_template: true
+    helm_namespace: 'monitoring'
+    helm_values: '{{charts_root}}/kibana/values.template.j2'
+    helm_strings: ''
+  roles:
+    - {role:  helm}
+    - {role:  kibana-init, tags: ['kibana-init']}
+
+ # tasks:
+  #  - name: Get kibana token
+   #   shell: 'kubectl --kubeconfig {{kube_config}}  get secret --namespace monitoring {{ install_name }}-kibana -o jsonpath="{.data.release}"  | base64 --decode ; echo'
+   #   register: token
+
+    #- debug:
+     #   msg: '{{token.stdout}}'
+
+   # - name: 'Copy token to {{mon_prop.kibana_token_file}}'
+    #  copy:
+     #   content: "{{token.stdout}}\n"
+      #  dest: '{{clusters.mz.monitoring.kibana_token_file}}'
+
